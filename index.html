@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        header {
+            background: #f4f4f4;
+            text-align: center;
+            padding: 1rem;
+        }
+        .profile-image {
+            width: 200px;
+            border-radius: 50%;
+        }
+        .intro, .skills, .samples, .contact {
+            margin-bottom: 2rem;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .skills-container {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Reduced gap between skills list and images */
+        }
+        .skills-list {
+            flex: 0 0 auto; /* Prevent the list from growing */
+        }
+        .skills-images {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Reduced gap between images */
+        }
+        .skills-gif, .skills-png {
+            width: 100px; /* Reduced image size */
+            height: 100px;
+            object-fit: contain;
+        }
+        .current-position-container {
+            display: flex;
+            justify-content: flex-start; /* Changed from flex-end to flex-start */
+            margin-bottom: 2rem;
+            padding-left: 20px; /* Changed from padding-right to padding-left */
+            gap: 30px;
+        }
+        .position-item {
+            text-align: center;
+        }
+        .current-position {
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .current-position-icon {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            background-color: white;
+            padding: 5px;
+        }
+        .current-position-text {
+            margin-top: 1rem;
+        }
+        .current-position-text h2 {
+            margin: 0;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        .current-position-text p {
+            margin: 0.3rem 0 0;
+            color: #555;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .current-position::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent);
+            z-index: 1;
+            animation: shine 3s infinite linear;
+            pointer-events: none;
+        }
+        @keyframes shine {
+            0% {transform: translateX(-50%) rotate(45deg);}
+            100% {transform: translateX(50%) rotate(45deg);}
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        header.dark-mode {
+            background: #1e1e1e;
+        }
+        /* Add more dark mode styles as needed for other elements */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <button id="dark-mode-toggle" style="position: absolute; top: 20px; right: 20px;">Toggle Dark Mode</button> <!-- Added button -->
+            <img src="1727103526881.jpg" alt="ABHISHEKAR" class="profile-image">
+            <h1>ABHISHEKAR</h1>
+            <p>Web Developer</p>
+        </div>
+    </header>
+
+    <script>
+        // JavaScript to toggle dark mode
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const header = document.querySelector('header');
+            header.classList.toggle('dark-mode');
+        });
+    </script>
+
+    <div class="container">
+        <div class="current-position-container">
+            <div class="position-item">
+                <section class="current-position">
+                    <img src="Crowedsource VBIT.jpeg" alt="Crowedsource VBIT Logo" class="current-position-icon">
+                </section>
+                <div class="current-position-text">
+                    <h2>Crowedsource VBIT</h2>
+                    <p>Secretary</p>
+                </div>
+            </div>
+            <div class="position-item">
+                <section class="current-position">
+                    <img src="1714299101098.jpg" alt="ASOCA Logo" class="current-position-icon">
+                </section>
+                <div class="current-position-text">
+                    <h2>ASOCA</h2>
+                    <p>Jr Web Developer</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="intro" id="about-me">
+            <h2><a href="about.html" style="color: black;">About Me</a></h2> <!-- Changed color to black -->
+            <p>Hi, I'm <span style="font-weight: bold; font-size: 1.5em;">Abhishekar</span></p>
+            <p style="font-size: 1.8em; font-weight: bold;">I make <span style="color: green;">full-stack</span> Products that people <span style="color: rgb(229, 114, 133);">love</span>.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <ul class="skills-list">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>UI/UX Design</li>
+                    <li>Responsive Design</li>
+                </ul>
+                <div class="skills-images">
+                    <img src="coding.gif" alt="Skills GIF" class="skills-gif">
+                    <img src="js-file.png" alt="Skills PNG" class="skills-png">
+                </div>
+            </div>
+        </section>
+
+        <section class="samples">
+            <h2>Projects currently working on.</h2>
+            <p><a href="https://github.com/theabhishekar/PRAGNA.AI" target="_blank">AI Chatbot </a>Assistant for DEPARTMENT OF JUSTICE WEBSITE</p>
+            <p><a href="https://theabhishekar.github.io/ASOCA/" target="_blank">ASOCA</a> Interactive website for startup.</p>
+            <!-- Add your project samples here -->
+        </section>
+
+        <section class="contact">
+            <h2>Contact Information</h2>
+            <p>Email: <a href="mailto:theabhishekar@gmail.com">theabhishekar@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/theabhishekar-m/" target="_blank">Abhishekar</a></p>
+            <p>GitHub: <a href="https://github.com/theabhishekar" target="_blank">GitHub Abhishekar</a></p>
+        </section>
+    </div>
+</body>
+</html>
