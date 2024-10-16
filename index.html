@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Portfolio</title>
     <style>
+        @font-face {
+            font-family: 'Product Sans';
+            src: url('path/to/ProductSans-Regular.ttf') format('truetype'); /* Update the path */
+        }
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -119,6 +123,20 @@
             background: #1e1e1e;
         }
         /* Add more dark mode styles as needed for other elements */
+
+        .google-logo {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.1rem; /* Adjust size as needed */
+            font-family: 'Product Sans', sans-serif; /* Use Product Sans for Google text */
+        }
+
+        .google-logo:nth-child(1) { color: #4285F4; } /* Blue */
+        .google-logo:nth-child(2) { color: #EA4335; } /* Red */
+        .google-logo:nth-child(3) { color: #FBBC05; } /* Yellow */
+        .google-logo:nth-child(4) { color: #34A853; } /* Green */
+        .google-logo:nth-child(5) { color: #4285F4; } /* Blue */
+        .google-logo:nth-child(6) { color: #EA4335; } /* Red */
     </style>
 </head>
 <body>
@@ -148,7 +166,8 @@
                     <img src="Crowedsource VBIT.jpeg" alt="Crowedsource VBIT Logo" class="current-position-icon">
                 </section>
                 <div class="current-position-text">
-                    <h2>Google Crowedsource VBIT</h2>
+                    <h2 class="google-logo">G</h2><h2 class="google-logo">o</h2><h2 class="google-logo">o</h2><h2 class="google-logo">g</h2><h2 class="google-logo">l</h2><h2 class="google-logo">e</h2>
+                    <p>Crowedsource VBIT</p>
                     <p>Secretary</p>
                 </div>
             </div>
@@ -173,7 +192,6 @@
             <h2>Skills</h2>
             <div class="skills-container">
                 <ul class="skills-list">
-                    <li>NO-CODE Platforms</li>
                     <li>HTML5</li>
                     <li>CSS3</li>
                     <li>JavaScript</li>
