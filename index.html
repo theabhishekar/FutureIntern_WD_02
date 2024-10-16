@@ -16,7 +16,8 @@
             padding: 0;
         }
         .container {
-            width: 80%;
+            width: 90%; /* Use a percentage for better responsiveness */
+            max-width: 1200px; /* Set a maximum width for larger screens */
             margin: auto;
             overflow: hidden;
             padding: 20px;
@@ -27,7 +28,9 @@
             padding: 1rem;
         }
         .profile-image {
-            width: 200px;
+            width: 100%; /* Make the profile image responsive */
+            max-width: 200px; /* Set a maximum width */
+            height: auto; /* Maintain aspect ratio */
             border-radius: 50%;
         }
         .intro, .skills, .samples, .contact {
@@ -50,9 +53,10 @@
             gap: 10px; /* Reduced gap between images */
         }
         .skills-gif, .skills-png {
-            width: 100px; /* Reduced image size */
-            height: 100px;
-            object-fit: contain;
+            width: 100%; /* Make the images responsive */
+            max-width: 100px; /* Set a maximum width */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Ensure the image fits within the container */
         }
         .current-position-container {
             display: flex;
@@ -65,9 +69,11 @@
             text-align: center;
         }
         .current-position {
+            width: 100%; /* Make the current position container responsive */
+            max-width: 150px; /* Set a maximum width */
+            height: auto; /* Maintain aspect ratio */
+            margin: auto; /* Center the item */
             background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-            width: 150px;
-            height: 150px;
             border-radius: 50%;
             position: relative;
             display: flex;
@@ -137,6 +143,18 @@
         .google-logo:nth-child(4) { color: #34A853; } /* Green */
         .google-logo:nth-child(5) { color: #4285F4; } /* Blue */
         .google-logo:nth-child(6) { color: #EA4335; } /* Red */
+
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+                align-items: center; /* Center align items */
+            }
+
+            .current-position-container {
+                flex-direction: column; /* Stack position items vertically */
+                align-items: center; /* Center align items */
+            }
+        }
     </style>
 </head>
 <body>
